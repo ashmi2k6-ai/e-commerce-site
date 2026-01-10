@@ -1,14 +1,219 @@
 const domains = [
-    { id: 'clothing', label: 'Clothing', items: ['Pastel Hoodie', 'Floral Dress', 'Soft Cardigan', 'Silk Scarf', 'Linen Shirt', 'Pleated Skirt', 'Denim Jacket', 'Chino Shorts', 'Cotton Tee', 'Wool Sweater'] },
-    { id: 'accessories', label: 'Accessories', items: ['Gold Necklace', 'Pearl Earrings', 'Charm Bracelet', 'Sun Hat', 'Leather Belt', 'Tote Bag', 'Hair Clips', 'Sunglasses', 'Scarf', 'Watch'] },
-    { id: 'footwear', label: 'Footwear', items: ['Canvas Sneakers', 'Leather Loafers', 'Ankle Boots', 'Strappy Sandals', 'Running Shoes', 'Ballet Flats', 'Slippers', 'Platform Heels', 'Rain Boots', 'Hiking Boots'] },
-    { id: 'essentials', label: 'Essentials', items: ['Water Bottle', 'Tote Bag', 'Notebook', 'Pen Set', 'Face Mask', 'Hand Sanitizer', 'Travel Mug', 'Umbrella', 'Key Chain', 'Wallet'] },
-    { id: 'beauty', label: 'Beauty', items: ['Lip Gloss', 'Face Serum', 'Mascara', 'Blush Palette', 'Foundation', 'Eyeliner', 'Moisturizer', 'Perfume', 'Nail Polish', 'Makeup Brushes'] },
-    { id: 'haircare', label: 'Haircare', items: ['Shampoo', 'Conditioner', 'Hair Oil', 'Hair Mask', 'Dry Shampoo', 'Curling Iron', 'Straightener', 'Hair Brush', 'Scrunchies', 'Hair Spray'] },
-    { id: 'electronics', label: 'Electronics', items: ['Headphones', 'Bluetooth Speaker', 'Power Bank', 'Smart Watch', 'Tablet', 'Laptop Sleeve', 'Mouse', 'Keyboard', 'Camera', 'Drone'] },
-    { id: 'furniture-and-home', label: 'Furniture', items: ['Accent Chair', 'Coffee Table', 'Table Lamp', 'Throw Pillow', 'Rug', 'Vase', 'Wall Art', 'Bookshelf', 'Plant Pot', 'Mirror'] },
-    { id: 'pet-care', label: 'Pet Care', items: ['Pet Bed', 'Dog Leash', 'Cat Toy', 'Pet Food Bowl', 'Dog Collar', 'Cat Scratcher', 'Pet Shampoo', 'Treat Jar', 'Pet Carrier', 'Bird Cage'] },
-    { id: 'mobiles', label: 'Mobiles', items: ['Smartphone Pro', 'Smartphone Lite', 'Foldable Phone', 'Gaming Phone', 'Budget Phone', 'Flagship Phone', 'Camera Phone', 'Battery King', 'Slim Phone', 'Mini Phone'] }
+    {
+        id: 'clothing',
+        label: 'Clothing',
+        items: [
+            'Pastel Hoodie', 'Floral Dress', 'Soft Cardigan', 'Silk Scarf', 'Linen Shirt',
+            'Pleated Skirt', 'Denim Jacket', 'Chino Shorts', 'Cotton Tee', 'Wool Sweater',
+            'Cashmere Pullover', 'Leather Jacket', 'Midi Dress', 'Cargo Pants', 'Blazer',
+            'Trench Coat', 'Polo Shirt', 'Tank Top', 'Maxi Skirt', 'Bomber Jacket',
+            'Graphic Tee', 'Joggers', 'Pencil Skirt', 'Flannel Shirt', 'Puffer Jacket',
+            'Crop Top', 'Wide Leg Pants', 'Bodysuit', 'Kimono', 'Tunic Top',
+            'Sweatshirt', 'Romper', 'Jumpsuit', 'Vest', 'Henley Shirt',
+            'Track Pants', 'A-Line Dress', 'Button Down Shirt', 'Leggings', 'Windbreaker',
+            'Turtleneck', 'Palazzo Pants', 'Wrap Dress', 'Parka', 'V-Neck Sweater'
+        ]
+    },
+    {
+        id: 'accessories',
+        label: 'Accessories',
+        items: [
+            'Gold Necklace', 'Pearl Earrings', 'Charm Bracelet', 'Sun Hat', 'Leather Belt',
+            'Tote Bag', 'Hair Clips', 'Sunglasses', 'Scarf', 'Watch',
+            'Silver Ring', 'Crossbody Bag', 'Beanie', 'Tie', 'Cufflinks',
+            'Backpack', 'Clutch Purse', 'Baseball Cap', 'Bow Tie', 'Brooch',
+            'Messenger Bag', 'Fedora Hat', 'Anklet', 'Pocket Square', 'Suspenders',
+            'Duffle Bag', 'Beret', 'Pendant Necklace', 'Hoop Earrings', 'Chain Bracelet',
+            'Bucket Hat', 'Wallet', 'Stud Earrings', 'Choker', 'Satchel',
+            'Visor', 'Money Clip', 'Bangle', 'Shoulder Bag', 'Newsboy Cap',
+            'Card Holder', 'Drop Earrings', 'Waist Belt', 'Fanny Pack', 'Trilby Hat'
+        ]
+    },
+    {
+        id: 'footwear',
+        label: 'Footwear',
+        items: [
+            'Canvas Sneakers', 'Leather Loafers', 'Ankle Boots', 'Strappy Sandals', 'Running Shoes',
+            'Ballet Flats', 'Slippers', 'Platform Heels', 'Rain Boots', 'Hiking Boots',
+            'High Top Sneakers', 'Oxford Shoes', 'Chelsea Boots', 'Flip Flops', 'Wedge Sandals',
+            'Moccasins', 'House Slippers', 'Stiletto Heels', 'Snow Boots', 'Trail Shoes',
+            'Slip-On Sneakers', 'Derby Shoes', 'Combat Boots', 'Espadrilles', 'Block Heels',
+            'Boat Shoes', 'Fuzzy Slippers', 'Kitten Heels', 'Winter Boots', 'Cross Trainers',
+            'Monk Strap Shoes', 'Riding Boots', 'Gladiator Sandals', 'Pumps', 'Work Boots',
+            'Driving Shoes', 'Memory Foam Slippers', 'Slingback Heels', 'Duck Boots', 'Basketball Shoes',
+            'Brogues', 'Knee High Boots', 'Slide Sandals', 'Peep Toe Heels', 'Steel Toe Boots'
+        ]
+    },
+    {
+        id: 'essentials',
+        label: 'Essentials',
+        items: [
+            'Water Bottle', 'Tote Bag', 'Notebook', 'Pen Set', 'Face Mask',
+            'Hand Sanitizer', 'Travel Mug', 'Umbrella', 'Key Chain', 'Wallet',
+            'Phone Case', 'Power Bank', 'USB Cable', 'Earbuds', 'Laptop Sleeve',
+            'Planner', 'Sticky Notes', 'Highlighters', 'Pencil Case', 'Lunch Box',
+            'Thermos', 'Reusable Straws', 'Tote Organizer', 'Badge Holder', 'Lanyard',
+            'Desk Organizer', 'File Folder', 'Binder', 'Stapler', 'Tape Dispenser',
+            'Scissors', 'Calculator', 'Ruler', 'Eraser', 'Sharpener',
+            'Clipboard', 'Whiteboard', 'Markers', 'Paper Clips', 'Push Pins',
+            'Rubber Bands', 'Glue Stick', 'Correction Tape', 'Hole Punch', 'Letter Opener'
+        ]
+    },
+    {
+        id: 'beauty',
+        label: 'Beauty',
+        items: [
+            'Lip Gloss', 'Face Serum', 'Mascara', 'Blush Palette', 'Foundation',
+            'Eyeliner', 'Moisturizer', 'Perfume', 'Nail Polish', 'Makeup Brushes',
+            'Lipstick', 'Concealer', 'Eyeshadow Palette', 'Bronzer', 'Primer',
+            'Setting Spray', 'Highlighter', 'Brow Pencil', 'Lip Liner', 'Face Powder',
+            'BB Cream', 'Tinted Moisturizer', 'Contour Kit', 'False Lashes', 'Lash Curler',
+            'Makeup Remover', 'Micellar Water', 'Face Mist', 'Lip Balm', 'Cuticle Oil',
+            'Nail File', 'Tweezers', 'Beauty Sponge', 'Brush Cleaner', 'Compact Mirror',
+            'Eye Cream', 'Night Cream', 'Face Mask', 'Peel Off Mask', 'Sheet Mask',
+            'Toner', 'Essence', 'Ampoule', 'Sleeping Mask', 'Sunscreen'
+        ]
+    },
+    {
+        id: 'haircare',
+        label: 'Haircare',
+        items: [
+            'Shampoo', 'Conditioner', 'Hair Oil', 'Hair Mask', 'Dry Shampoo',
+            'Curling Iron', 'Straightener', 'Hair Brush', 'Scrunchies', 'Hair Spray',
+            'Leave-In Conditioner', 'Hair Serum', 'Detangling Spray', 'Heat Protectant', 'Volumizing Mousse',
+            'Hair Gel', 'Pomade', 'Hair Wax', 'Blow Dryer', 'Diffuser',
+            'Wide Tooth Comb', 'Paddle Brush', 'Round Brush', 'Teasing Comb', 'Hair Clips',
+            'Bobby Pins', 'Hair Ties', 'Headband', 'Hair Rollers', 'Crimper',
+            'Hot Air Brush', 'Scalp Massager', 'Hair Towel', 'Silk Pillowcase', 'Hair Vitamins',
+            'Root Touch Up', 'Hair Chalk', 'Texturizing Spray', 'Shine Spray', 'Anti-Frizz Cream',
+            'Curl Cream', 'Hair Powder', 'Edge Control', 'Wig Cap', 'Hair Extensions'
+        ]
+    },
+    {
+        id: 'electronics',
+        label: 'Electronics',
+        items: [
+            'Headphones', 'Bluetooth Speaker', 'Power Bank', 'Smart Watch', 'Tablet',
+            'Laptop Sleeve', 'Mouse', 'Keyboard', 'Camera', 'Drone',
+            'Wireless Earbuds', 'Portable Charger', 'Phone Stand', 'Laptop Stand', 'Webcam',
+            'Microphone', 'Ring Light', 'USB Hub', 'External Hard Drive', 'SD Card',
+            'HDMI Cable', 'Monitor', 'Gaming Headset', 'Controller', 'VR Headset',
+            'Smartwatch Band', 'Fitness Tracker', 'E-Reader', 'Stylus Pen', 'Drawing Tablet',
+            'Portable SSD', 'Card Reader', 'Cable Organizer', 'Phone Gimbal', 'Action Camera',
+            'Tripod', 'Selfie Stick', 'Bluetooth Adapter', 'WiFi Extender', 'Smart Plug',
+            'LED Strip Lights', 'Desk Lamp', 'Surge Protector', 'Wireless Charger', 'Car Charger'
+        ]
+    },
+    {
+        id: 'furniture-and-home',
+        label: 'Furniture',
+        items: [
+            'Accent Chair', 'Coffee Table', 'Table Lamp', 'Throw Pillow', 'Rug',
+            'Vase', 'Wall Art', 'Bookshelf', 'Plant Pot', 'Mirror',
+            'Side Table', 'Floor Lamp', 'Throw Blanket', 'Curtains', 'Picture Frame',
+            'Candle Holder', 'Desk', 'Office Chair', 'Ottoman', 'Console Table',
+            'Bar Stool', 'Coat Rack', 'Shoe Rack', 'Storage Basket', 'Wall Clock',
+            'Decorative Tray', 'Cushion Cover', 'Table Runner', 'Placemat', 'Coasters',
+            'Bedside Table', 'Dresser', 'Wardrobe', 'TV Stand', 'Shelving Unit',
+            'Bean Bag', 'Rocking Chair', 'Bench', 'Magazine Rack', 'Umbrella Stand',
+            'Room Divider', 'Floating Shelf', 'Corner Shelf', 'Wine Rack', 'Jewelry Box'
+        ]
+    },
+    {
+        id: 'pet-care',
+        label: 'Pet Care',
+        items: [
+            'Pet Bed', 'Dog Leash', 'Cat Toy', 'Pet Food Bowl', 'Dog Collar',
+            'Cat Scratcher', 'Pet Shampoo', 'Treat Jar', 'Pet Carrier', 'Bird Cage',
+            'Dog Harness', 'Cat Litter Box', 'Pet Brush', 'Chew Toys', 'Catnip',
+            'Dog Treats', 'Cat Treats', 'Pet Nail Clipper', 'Pet Toothbrush', 'Flea Collar',
+            'Pet Blanket', 'Water Fountain', 'Automatic Feeder', 'Pet Gate', 'Litter Scoop',
+            'Pet Stairs', 'Dog Coat', 'Cat Tunnel', 'Squeaky Toys', 'Rope Toy',
+            'Pet Grooming Kit', 'Poop Bags', 'Pet First Aid Kit', 'ID Tag', 'Pet Camera',
+            'Hamster Wheel', 'Fish Tank', 'Aquarium Filter', 'Pet Heating Pad', 'Cooling Mat',
+            'Pet Stroller', 'Travel Bowl', 'Pet Seatbelt', 'Litter Mat', 'Pet Playpen'
+        ]
+    },
+    {
+        id: 'mobiles',
+        label: 'Mobiles',
+        items: [
+            'Smartphone Pro', 'Smartphone Lite', 'Foldable Phone', 'Gaming Phone', 'Budget Phone',
+            'Flagship Phone', 'Camera Phone', 'Battery King', 'Slim Phone', 'Mini Phone',
+            'Rugged Phone', '5G Phone', 'Dual SIM Phone', 'Waterproof Phone', 'Business Phone',
+            'Senior Phone', 'Kids Phone', 'Music Phone', 'Selfie Phone', 'Fast Charge Phone',
+            'Wireless Charging Phone', 'Curved Display Phone', 'Notchless Phone', 'Pop-up Camera Phone', 'Under Display Camera Phone',
+            'Stylus Phone', 'Dual Screen Phone', 'Transparent Phone', 'Modular Phone', 'Eco Phone',
+            'AI Phone', 'Thermal Camera Phone', 'Night Vision Phone', 'Satellite Phone', 'Flip Phone',
+            'Slider Phone', 'Compact Phone', 'Phablet', 'Edge Display Phone', 'Holographic Phone',
+            'Projector Phone', 'Solar Phone', 'Titanium Phone', 'Ceramic Phone', 'Leather Back Phone'
+        ]
+    }
+];
+
+// Dummy user names for reviews
+const reviewerNames = [
+    'Sarah Johnson', 'Michael Chen', 'Emily Rodriguez', 'David Kim', 'Jessica Williams',
+    'James Anderson', 'Ashley Martinez', 'Christopher Lee', 'Amanda Taylor', 'Daniel Brown',
+    'Melissa Garcia', 'Matthew Wilson', 'Jennifer Lopez', 'Joshua Davis', 'Laura Miller',
+    'Andrew Thompson', 'Stephanie White', 'Ryan Harris', 'Nicole Clark', 'Kevin Lewis'
+];
+
+// Review templates
+const reviewTemplates = [
+    'Absolutely love this product! Exceeded my expectations.',
+    'Great quality and fast delivery. Highly recommend!',
+    'Perfect for what I needed. Very satisfied with my purchase.',
+    'Good value for money. Would buy again.',
+    'Excellent product! Exactly as described.',
+    'Very happy with this purchase. Great quality!',
+    'Fantastic! Better than I expected.',
+    'Amazing quality and beautiful design.',
+    'Love it! Worth every penny.',
+    'Outstanding product. Five stars!',
+    'Pretty good, but could be better.',
+    'Decent product for the price.',
+    'It\'s okay, meets basic expectations.',
+    'Good but not great. Does the job.',
+    'Satisfied with the purchase overall.'
+];
+
+// Manufacturers by category
+const manufacturers = {
+    'clothing': ['StyleCo', 'FashionHub', 'TrendWear', 'UrbanThreads', 'ChicBoutique'],
+    'accessories': ['LuxeAccessories', 'GlamourGoods', 'StyleEssentials', 'TrendyFinds', 'AccessoryWorld'],
+    'footwear': ['StepStyle', 'ComfortWalk', 'FootFashion', 'SoleMatters', 'WalkWell'],
+    'essentials': ['DailyEssentials', 'LifeStyle Co', 'EverydayNeeds', 'BasicGoods', 'EssentialHub'],
+    'beauty': ['GlowBeauty', 'RadiantCosmetics', 'BeautyBliss', 'PureGlow', 'LuxeBeauty'],
+    'haircare': ['HairCare Pro', 'LockLove', 'SilkyStrands', 'HairEssence', 'TressBeauty'],
+    'electronics': ['TechVision', 'GadgetPro', 'SmartTech', 'ElectroHub', 'DigitalEdge'],
+    'furniture-and-home': ['HomeComfort', 'LivingSpaces', 'CozyHome', 'ModernLiving', 'InteriorStyle'],
+    'pet-care': ['PetLove', 'HappyPaws', 'PetEssentials', 'FurryFriends', 'PetCare Plus'],
+    'mobiles': ['PhoneTech', 'MobileMax', 'SmartDevices', 'TechMobile', 'PhonePro']
+};
+
+// Sellers
+const sellers = [
+    { name: 'Premium Retail Store', rating: 4.8 },
+    { name: 'Global Marketplace', rating: 4.6 },
+    { name: 'Trusted Seller Co', rating: 4.9 },
+    { name: 'Quality Goods Inc', rating: 4.7 },
+    { name: 'Best Buy Store', rating: 4.5 },
+    { name: 'Elite Shopping', rating: 4.8 },
+    { name: 'Top Rated Seller', rating: 4.9 },
+    { name: 'Verified Merchant', rating: 4.6 }
+];
+
+// Special offers
+const specialOffers = [
+    'Limited Time Offer',
+    'Flash Sale',
+    'Seasonal Discount',
+    'Clearance Sale',
+    'New Arrival Special',
+    'Best Seller Deal',
+    'Weekend Special',
+    'Exclusive Offer'
 ];
 
 const generateProducts = () => {
@@ -84,30 +289,83 @@ const generateProducts = () => {
             // Pick an ID from the pool based on the index (cycling)
             const pool = idPools[domain.id] || idPools['clothing'];
             const photoId = pool[index % pool.length];
-
-            // Add a unique signature for good measure
             const imageUrl = `https://images.unsplash.com/photo-${photoId}?auto=format&fit=crop&w=600&q=80`;
+
+            // Generate pricing
+            const basePrice = Math.floor(Math.random() * 150) + 30;
+            const discountPercent = [20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80][Math.floor(Math.random() * 13)];
+            const originalPrice = Math.floor(basePrice / (1 - discountPercent / 100));
+
+            // Generate delivery info
+            const deliveryOptions = [1, 2, 3, 5, 7, 10];
+            const deliveryDays = deliveryOptions[Math.floor(Math.random() * deliveryOptions.length)];
+            const deliveryCharge = deliveryDays <= 2 ? Math.floor(Math.random() * 10) + 5 : (Math.random() > 0.5 ? 0 : Math.floor(Math.random() * 5));
+            const deliveryModes = ['Standard Shipping', 'Express Delivery', 'Premium Delivery', 'Same Day Delivery'];
+            const deliveryMode = deliveryDays === 1 ? 'Same Day Delivery' : deliveryDays === 2 ? 'Express Delivery' : deliveryDays <= 5 ? 'Premium Delivery' : 'Standard Shipping';
+
+            // Generate material info based on category
+            let materialInfo = '';
+            if (domain.id === 'clothing' || domain.id === 'footwear') {
+                const materials = ['100% Cotton', '100% Polyester', 'Cotton Blend', 'Leather', 'Synthetic', 'Wool Blend', 'Linen', 'Silk'];
+                materialInfo = materials[Math.floor(Math.random() * materials.length)];
+            } else if (domain.id === 'beauty' || domain.id === 'haircare') {
+                const futureDate = new Date();
+                futureDate.setMonth(futureDate.getMonth() + Math.floor(Math.random() * 24) + 12);
+                materialInfo = `Expiry: ${futureDate.toLocaleDateString('en-US', { month: 'short', year: 'numeric' })}`;
+            } else if (domain.id === 'essentials' || domain.id === 'electronics') {
+                const materials = ['Plastic', 'Metal', 'Aluminum', 'Stainless Steel', 'Silicone', 'Glass', 'Bamboo', 'Recycled Materials'];
+                materialInfo = materials[Math.floor(Math.random() * materials.length)];
+            } else {
+                materialInfo = 'Premium Quality Materials';
+            }
+
+            // Generate reviews
+            const reviewCount = Math.floor(Math.random() * 500) + 50;
+            const rating = (4 + Math.random() * 1).toFixed(1);
+            const numReviews = Math.floor(Math.random() * 5) + 3;
+            const reviews = [];
+            for (let i = 0; i < numReviews; i++) {
+                const reviewRating = parseFloat(rating) + (Math.random() - 0.5);
+                reviews.push({
+                    userName: reviewerNames[Math.floor(Math.random() * reviewerNames.length)],
+                    rating: Math.max(1, Math.min(5, reviewRating)).toFixed(1),
+                    comment: reviewTemplates[Math.floor(Math.random() * reviewTemplates.length)],
+                    date: new Date(Date.now() - Math.random() * 90 * 24 * 60 * 60 * 1000).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })
+                });
+            }
+
+            // Select manufacturer and seller
+            const manufacturerList = manufacturers[domain.id] || manufacturers['essentials'];
+            const manufacturer = manufacturerList[Math.floor(Math.random() * manufacturerList.length)];
+            const seller = sellers[Math.floor(Math.random() * sellers.length)];
 
             allProducts.push({
                 id: idCounter++,
                 name: itemName,
                 domain: domain.id,
                 category: domain.id,
-                price: Math.floor(Math.random() * 100) + 20,
-                rating: (4 + Math.random()).toFixed(1),
-                reviewCount: Math.floor(Math.random() * 500) + 50,
+                price: basePrice,
+                originalPrice: originalPrice,
+                discount: discountPercent,
+                rating: rating,
+                reviewCount: reviewCount,
                 image: imageUrl,
-                description: `This premium ${itemName} is a standout in our ${domain.label} collection. Professionally crafted for both style and utility, it features a unique design that makes it a perfect addition to your pastel-themed lifestyle. Highly durable and elegantly detailed.`
+                description: `This premium ${itemName} is a standout in our ${domain.label} collection. Professionally crafted for both style and utility, it features a unique design that makes it a perfect addition to your pastel-themed lifestyle. Highly durable and elegantly detailed.`,
+                manufacturer: manufacturer,
+                materialInfo: materialInfo,
+                deliveryDays: deliveryDays,
+                deliveryCharge: deliveryCharge,
+                deliveryMode: deliveryMode,
+                seller: seller,
+                specialOffer: Math.random() > 0.6 ? specialOffers[Math.floor(Math.random() * specialOffers.length)] : null,
+                couponAvailable: Math.random() > 0.5,
+                lowestPriceOfYear: Math.random() > 0.8,
+                reviews: reviews
             });
         });
     });
 
     return allProducts;
-};
-
-const getRandomColor = () => {
-    const colors = ['FADADD', 'F5F5DC', '87CEEB', '90EE90', 'FFB7B2', 'E2F0CB', 'D8BFD8', 'F5DEB3', 'E0FFFF', 'FFDAB9'];
-    return colors[Math.floor(Math.random() * colors.length)];
 };
 
 export const products = generateProducts();

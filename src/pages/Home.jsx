@@ -8,14 +8,18 @@ import ProductCard from '../components/ProductCard';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 
 const HomeContainer = styled.div`
-  max-width: 1400px;
+  max-width: 1200px;
   margin: 0 auto;
-  padding-bottom: 5rem;
+  padding: 80px 2rem 5rem;
+
+  @media (max-width: 768px) {
+    padding: 120px 1rem 3rem;
+  }
 `;
 
 const SalesSlider = styled.div`
   height: 250px;
-  margin: 1rem 2rem;
+  margin: 1rem 0;
   border-radius: 25px;
   overflow: hidden;
   position: relative;
@@ -64,7 +68,7 @@ const SliderNav = styled.button`
 `;
 
 const Section = styled.div`
-  padding: 3rem 2rem;
+  padding: 3rem 0;
 `;
 
 const SectionHeader = styled.div`
@@ -88,13 +92,31 @@ const SectionHeader = styled.div`
       background: var(--pastel-blue);
       border-radius: 2px;
     }
+
+    @media (max-width: 768px) {
+      font-size: 1.5rem;
+    }
   }
 `;
 
 const ProductGrid = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  grid-template-columns: repeat(4, 1fr);
   gap: 2rem;
+
+  @media (max-width: 1024px) {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  @media (max-width: 480px) {
+    gap: 0.8rem;
+  }
 `;
 
 const ViewMoreBtn = styled(Link)`
@@ -155,6 +177,16 @@ const CategoryGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 2rem;
+
+  @media (max-width: 1024px) {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 1.5rem;
+  }
+
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 1rem;
+  }
 `;
 
 const sales = [
@@ -187,6 +219,7 @@ const mainCategories = [
 const Home = () => {
   const { recentlyViewed } = useShop();
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [recommendedProducts, setRecommendedProducts] = useState([]);
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -194,6 +227,28 @@ const Home = () => {
     }, 5000);
     return () => clearInterval(timer);
   }, []);
+
+  // Generate recommended products based on recently viewed
+  useEffect(() => {
+    if (recentlyViewed.length > 0) {
+      // Get categories from recently viewed products
+      const viewedCategories = [...new Set(recentlyViewed.map(p => p.category || p.domain))];
+      const viewedIds = recentlyViewed.map(p => p.id);
+
+      // Find products from same categories that user hasn't viewed
+      const recommended = products.filter(product => {
+        // Exclude already viewed products
+        if (viewedIds.includes(product.id)) return false;
+
+        // Include if same category as viewed products
+        return viewedCategories.includes(product.category || product.domain);
+      });
+
+      // Shuffle and limit to 8 products
+      const shuffled = recommended.sort(() => 0.5 - Math.random()).slice(0, 8);
+      setRecommendedProducts(shuffled);
+    }
+  }, [recentlyViewed]);
 
   const nextSlide = () => setCurrentSlide((prev) => (prev + 1) % sales.length);
   const prevSlide = () => setCurrentSlide((prev) => (prev - 1 + sales.length) % sales.length);
@@ -229,14 +284,31 @@ const Home = () => {
         <SliderNav onClick={nextSlide}><FaChevronRight /></SliderNav>
       </SalesSlider>
 
+      {/* Recently Viewed Section - Only show if user has viewed products */}
       {recentlyViewed.length > 0 && (
         <Section>
           <SectionHeader>
             <h2>Recently Viewed</h2>
-            <ViewMoreBtn to="/recently-viewed">View All</ViewMoreBtn>
+            {recentlyViewed.length > 8 && (
+              <ViewMoreBtn to="/recently-viewed">View All</ViewMoreBtn>
+            )}
           </SectionHeader>
           <ProductGrid>
-            {recentlyViewed.slice(0, 4).map(product => (
+            {recentlyViewed.slice(0, 8).map(product => (
+              <ProductCard key={product.id} product={product} />
+            ))}
+          </ProductGrid>
+        </Section>
+      )}
+
+      {/* Recommended Section - Only show if user has viewed products */}
+      {recentlyViewed.length > 0 && recommendedProducts.length > 0 && (
+        <Section>
+          <SectionHeader>
+            <h2>Recommended for You</h2>
+          </SectionHeader>
+          <ProductGrid>
+            {recommendedProducts.map(product => (
               <ProductCard key={product.id} product={product} />
             ))}
           </ProductGrid>

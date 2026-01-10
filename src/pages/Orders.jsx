@@ -100,9 +100,11 @@ const Orders = () => {
           <OrderHeader>
             <div>
               <strong>Order ID:</strong> #{order.id}<br />
-              Placed on: {order.date}
+              Placed on: {order.date}<br />
+              <strong>Payment:</strong> {order.paymentMethod || 'N/A'}
             </div>
             <div className="status">{order.status}</div>
+
           </OrderHeader>
           {order.items.map((item, idx) => (
             <OrderItem key={idx}>

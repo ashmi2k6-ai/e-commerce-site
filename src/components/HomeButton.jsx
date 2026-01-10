@@ -2,7 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import { FaHome } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
 
 const FloatingHomeBtn = styled(motion.div)`
   position: fixed;
@@ -29,8 +28,8 @@ const FloatingHomeBtn = styled(motion.div)`
 
 const HomeButton = () => {
     const handleNavigation = () => {
-        // Absolute redirection to the starting page
-        window.location.href = window.location.origin;
+        console.log('Home button clicked - navigating to /');
+        window.location.href = '/';
     };
 
     return (

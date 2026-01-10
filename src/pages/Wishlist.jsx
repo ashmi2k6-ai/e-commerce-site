@@ -7,6 +7,11 @@ const Container = styled.div`
   padding: 2rem;
   max-width: 900px;
   margin: 0 auto;
+
+  @media (max-width: 768px) {
+    padding: 1rem;
+    padding-top: 80px;
+  }
 `;
 
 const Title = styled.h2`
@@ -34,6 +39,19 @@ const WishItem = styled.div`
     background: #fdfdfd;
     padding: 5px;
     border: 1px solid #f0f0f0;
+  }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    position: relative;
+    padding: 1rem;
+
+    img {
+      width: 100%;
+      height: 200px;
+    }
   }
 `;
 
@@ -66,6 +84,16 @@ const ActionBtn = styled.button`
 
   &.delete:hover {
     color: #ff6b6b;
+  }
+
+  @media (max-width: 768px) {
+    &.delete {
+      position: absolute;
+      top: 0.5rem;
+      right: 0.5rem;
+      background: rgba(255,255,255,0.8);
+      border-radius: 50%;
+    }
   }
 `;
 

@@ -15,6 +15,8 @@ import Coupons from './pages/Coupons';
 import Chatbot from './components/Chatbot';
 import HomeButton from './components/HomeButton';
 import RecentlyViewed from './pages/RecentlyViewed';
+import Payment from './pages/Payment';
+
 
 function App() {
     return (
@@ -34,7 +36,9 @@ function App() {
                     <Route path="/help" element={<HelpCentre />} />
                     <Route path="/coupons" element={<Coupons />} />
                     <Route path="/recently-viewed" element={<RecentlyViewed />} />
+                    <Route path="/payment" element={<Payment />} />
                 </Routes>
+
                 <Chatbot />
                 <HomeButton />
             </Router>

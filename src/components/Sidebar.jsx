@@ -26,6 +26,11 @@ const SidebarContainer = styled(motion.div)`
   box-shadow: 2px 0 10px rgba(0,0,0,0.1);
   display: flex;
   flex-direction: column;
+
+  @media (max-width: 480px) {
+    width: 280px;
+    padding: 1.5rem;
+  }
 `;
 
 const Header = styled.div`
