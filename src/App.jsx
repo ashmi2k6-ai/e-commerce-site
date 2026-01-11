@@ -21,13 +21,12 @@ import Payment from './pages/Payment';
 function App() {
     return (
         <ShopProvider>
-            <Router>
+            <Router basename={import.meta.env.PROD ? '/e-commerce-site' : '/'}>
                 <Header />
                 <Routes>
                     <Route path="/" element={<Home />} />
                     <Route path="/products/:domain" element={<ProductListing />} />
                     <Route path="/search" element={<ProductListing />} />
-                    <Route path="/product/:id" element={<ProductDetail />} />
                     <Route path="/cart" element={<Cart />} />
                     <Route path="/wishlist" element={<Wishlist />} />
                     <Route path="/orders" element={<Orders />} />
@@ -37,6 +36,7 @@ function App() {
                     <Route path="/coupons" element={<Coupons />} />
                     <Route path="/recently-viewed" element={<RecentlyViewed />} />
                     <Route path="/payment" element={<Payment />} />
+                    <Route path="/product/:id" element={<ProductDetail />} />
                 </Routes>
 
                 <Chatbot />
