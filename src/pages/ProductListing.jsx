@@ -88,7 +88,7 @@ const Grid = styled.div`
   }
 
   @media (max-width: 480px) {
-    gap: 0.8rem;
+    gap: 0.5rem; /* Reduced from 0.8rem */
   }
 `;
 

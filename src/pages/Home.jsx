@@ -28,6 +28,12 @@ const SalesSlider = styled.div`
   align-items: center;
   justify-content: center;
   box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  
+  @media (max-width: 768px) {
+    height: 300px; /* Increase height for mobile */
+    border-radius: 15px;
+    margin: 0.5rem 0;
+  }
 `;
 
 const Slide = styled(motion.div)`
@@ -42,8 +48,25 @@ const Slide = styled(motion.div)`
   text-align: center;
   padding: 2rem;
 
-  h2 { font-size: 3rem; margin-bottom: 1rem; text-shadow: 2px 2px 10px rgba(0,0,0,0.1); }
-  p { font-size: 1.5rem; opacity: 0.9; }
+  h2 { 
+    font-size: 3rem; 
+    margin-bottom: 1rem; 
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.1); 
+
+    @media (max-width: 768px) {
+      font-size: 2rem; /* Reduce font size */
+      margin-bottom: 0.5rem;
+    }
+  }
+  
+  p { 
+    font-size: 1.5rem; 
+    opacity: 0.9; 
+
+    @media (max-width: 768px) {
+      font-size: 1rem;
+    }
+  }
 `;
 
 const SliderNav = styled.button`
@@ -115,7 +138,7 @@ const ProductGrid = styled.div`
   }
 
   @media (max-width: 480px) {
-    gap: 0.8rem;
+    gap: 0.5rem; /* Reduced from 0.8rem */
   }
 `;
 
