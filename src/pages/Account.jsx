@@ -12,8 +12,9 @@ const ProfileHeader = styled.div`
   display: flex;
   align-items: center;
   gap: 2rem;
-  margin-bottom: 3rem;
-  padding: 2rem;
+  margin-bottom: 2rem;
+  margin-top: +100px;
+  padding: 3rem;
   background: white;
   border-radius: 20px;
   box-shadow: 0 5px 15px rgba(0,0,0,0.05);
@@ -56,63 +57,63 @@ const Field = styled.div`
 `;
 
 const Account = () => {
-    // Mock User Data
-    const [user] = useState({
-        username: "PastelLover2024",
-        email: "user@example.com",
-        phone: "+1 (555) 123-4567",
-        recoveryEmail: "recovery@example.com",
-        recoveryPhone: "+1 (555) 987-6543",
-        memberSince: "Dec 2024"
-    });
+  // Mock User Data
+  const [user] = useState({
+    username: "PastelLover2024",
+    email: "user@example.com",
+    phone: "+1 (555) 123-4567",
+    recoveryEmail: "recovery@example.com",
+    recoveryPhone: "+1 (555) 987-6543",
+    memberSince: "Dec 2024"
+  });
 
-    return (
-        <Container>
-            <ProfileHeader>
-                <FaUserCircle />
-                <div>
-                    <h1>{user.username}</h1>
-                    <p>Member since {user.memberSince}</p>
-                </div>
-            </ProfileHeader>
+  return (
+    <Container>
+      <ProfileHeader>
+        <FaUserCircle />
+        <div>
+          <h1>{user.username}</h1>
+          <p>Member since {user.memberSince}</p>
+        </div>
+      </ProfileHeader>
 
-            <InfoSection>
-                <h3>Personal Information</h3>
+      <InfoSection>
+        <h3>Personal Information</h3>
 
-                <Field>
-                    <label>Username</label>
-                    <div>{user.username}</div>
-                </Field>
+        <Field>
+          <label>Username</label>
+          <div>{user.username}</div>
+        </Field>
 
-                <Field>
-                    <label>Email ID</label>
-                    <div>{user.email}</div>
-                </Field>
+        <Field>
+          <label>Email ID</label>
+          <div>{user.email}</div>
+        </Field>
 
-                <Field>
-                    <label>Phone Number</label>
-                    <div>{user.phone}</div>
-                </Field>
+        <Field>
+          <label>Phone Number</label>
+          <div>{user.phone}</div>
+        </Field>
 
-                <Field>
-                    <label>Password</label>
-                    <div>••••••••••••</div>
-                </Field>
+        <Field>
+          <label>Password</label>
+          <div>••••••••••••</div>
+        </Field>
 
-                <h3 style={{ marginTop: '2rem' }}>Security Recovery</h3>
+        <h3 style={{ marginTop: '2rem' }}>Security Recovery</h3>
 
-                <Field>
-                    <label>Recovery Email</label>
-                    <div>{user.recoveryEmail}</div>
-                </Field>
+        <Field>
+          <label>Recovery Email</label>
+          <div>{user.recoveryEmail}</div>
+        </Field>
 
-                <Field>
-                    <label>Recovery Number</label>
-                    <div>{user.recoveryPhone}</div>
-                </Field>
-            </InfoSection>
-        </Container>
-    );
+        <Field>
+          <label>Recovery Number</label>
+          <div>{user.recoveryPhone}</div>
+        </Field>
+      </InfoSection>
+    </Container>
+  );
 };
 
 export default Account;

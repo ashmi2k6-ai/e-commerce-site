@@ -132,11 +132,13 @@ const Header = () => {
   };
 
   const handleWishlistClick = () => {
-    navigate('/wishlist');
+    console.log('Wishlist button clicked - navigating to /wishlist');
+    window.location.href = '/wishlist';
   };
 
   const handleCartClick = () => {
-    navigate('/cart');
+    console.log('Cart button clicked - navigating to /cart');
+    window.location.href = '/cart';
   };
 
   return (

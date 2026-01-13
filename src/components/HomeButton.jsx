@@ -24,34 +24,26 @@ const FloatingHomeBtn = styled(motion.div)`
   &:hover {
     background: #f8b9c4;
   }
-
-  @media (max-width: 768px) {
-    top: 130px; /* Push down to avoid cutoff */
-    right: 15px;
-    width: 45px;
-    height: 45px;
-    font-size: 1.2rem;
-  }
 `;
 
 const HomeButton = () => {
-    const handleNavigation = () => {
-        console.log('Home button clicked - navigating to /');
-        window.location.href = '/';
-    };
+  const handleNavigation = () => {
+    console.log('Home button clicked - navigating to /');
+    window.location.href = '/';
+  };
 
-    return (
-        <FloatingHomeBtn
-            initial={{ opacity: 0, scale: 0.5 }}
-            animate={{ opacity: 1, scale: 1 }}
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
-            onClick={handleNavigation}
-            title="Return to Home Page"
-        >
-            <FaHome />
-        </FloatingHomeBtn>
-    );
+  return (
+    <FloatingHomeBtn
+      initial={{ opacity: 0, scale: 0.5 }}
+      animate={{ opacity: 1, scale: 1 }}
+      whileHover={{ scale: 1.1 }}
+      whileTap={{ scale: 0.9 }}
+      onClick={handleNavigation}
+      title="Return to Home Page"
+    >
+      <FaHome />
+    </FloatingHomeBtn>
+  );
 };
 
 export default HomeButton;

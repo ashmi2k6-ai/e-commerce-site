@@ -57,7 +57,7 @@ const ImageContainer = styled.div`
   }
 
   @media (max-width: 768px) {
-    height: 130px; /* Reduced from 150px */
+    height: 150px;
   }
 `;
 
@@ -111,7 +111,7 @@ const Content = styled.div`
   justify-content: space-between;
 
   @media (max-width: 768px) {
-    padding: 0.5rem; /* Reduced from 0.8rem */
+    padding: 0.8rem;
   }
 `;
 
@@ -127,9 +127,8 @@ const Title = styled.h3`
   height: 2.8rem;
 
   @media (max-width: 768px) {
-    font-size: 0.8rem;
-    height: 2.2rem;
-    margin-bottom: 0.3rem;
+    font-size: 0.95rem;
+    height: 2.4rem;
   }
 `;
 
@@ -168,7 +167,7 @@ const Price = styled.span`
   color: var(--pastel-blue);
 
   @media (max-width: 768px) {
-    font-size: 1rem;
+    font-size: 1.1rem;
   }
 `;
 
@@ -242,8 +241,8 @@ const BuyNowBtn = styled.button`
   }
 
   @media (max-width: 480px) {
-    font-size: 0.7rem;
-    padding: 0.4rem 0.3rem;
+    font-size: 0.75rem;
+    padding: 0.5rem 0.4rem;
   }
 `;
 
